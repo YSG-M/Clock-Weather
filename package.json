@@ -1,0 +1,39 @@
+{
+  "name": "clock-weather",
+  "version": "1.0.0",
+  "description": "World clock with live weather for every city",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win dir",
+    "dist:installer": "electron-builder --win nsis portable"
+  },
+  "build": {
+    "appId": "com.clockweather.app",
+    "productName": "Clock Weather",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0"
+  },
+  "devDependencies": {
+    "electron": "^45.1.0",
+    "electron-builder": "^26.18.0"
+  }
+}

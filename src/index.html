@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' file:; script-src 'self' file:; style-src 'self' file: 'unsafe-inline'; font-src 'self' file: data:; img-src 'self' file: data:; connect-src https://api.open-meteo.com https://geocoding-api.open-meteo.com">
+  <title>Clock Weather</title>
+  <link rel="stylesheet" href="../node_modules/@fontsource/montserrat/600.css">
+  <link rel="stylesheet" href="../node_modules/@fontsource/montserrat/700.css">
+  <link rel="stylesheet" href="../node_modules/@fontsource/merriweather/300.css">
+  <link rel="stylesheet" href="../node_modules/@fontsource/merriweather/700.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="icon-btn" id="btn-menu" data-i18n-title="settings"></button>
+      <button class="icon-btn" id="btn-theme" data-i18n-title="theme"></button>
+      <button class="icon-btn layout-btn" data-layout="1" data-i18n-title="layout1">1</button>
+      <button class="icon-btn layout-btn" data-layout="2" data-i18n-title="layout2">2</button>
+      <button class="icon-btn" id="btn-info" data-i18n-title="about"></button>
+    </div>
+    <div class="brand"><span id="brand-icon"></span><span data-i18n="title"></span></div>
+    <div class="topbar-right">
+      <button class="icon-btn" id="btn-full" data-i18n-title="fullscreen"></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-date" id="hero-date"></div>
+        <div class="hero-time" id="hero-time"></div>
+        <div class="hero-zone" id="hero-zone"></div>
+        <div class="hero-wx" id="hero-wx"></div>
+      </div>
+      <div class="hero-clock" id="hero-clock"></div>
+    </section>
+
+    <section class="cards" id="cards"></section>
+  </main>
+
+  <footer class="status">
+    <span id="status-text"></span>
+    <button class="link-btn" id="btn-refresh" data-i18n="refresh"></button>
+  </footer>
+
+  <dialog id="search-dialog" class="modal">
+    <div class="modal-head">
+      <h2 id="search-title"></h2>
+      <button class="icon-btn small" data-close></button>
+    </div>
+    <input id="search-input" type="search" autocomplete="off" spellcheck="false">
+    <ul id="search-results" class="results"></ul>
+  </dialog>
+
+  <dialog id="settings-dialog" class="drawer">
+    <div class="modal-head">
+      <h2 data-i18n="settings"></h2>
+      <button class="icon-btn small" data-close></button>
+    </div>
+    <div id="settings-body"></div>
+  </dialog>
+
+  <dialog id="about-dialog" class="modal">
+    <div class="modal-head">
+      <h2 data-i18n="about"></h2>
+      <button class="icon-btn small" data-close></button>
+    </div>
+    <div id="about-body" class="about"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
