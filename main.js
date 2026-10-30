@@ -20,9 +20,11 @@ function loadWindowState() {
 
 function createWindow() {
   const st = loadWindowState();
+  // Never open larger than the screen, so the default layout fits without scrolling.
+  const area = screen.getPrimaryDisplay().workAreaSize;
   const win = new BrowserWindow({
-    width: st.width || 1280,
-    height: st.height || 840,
+    width: Math.min(st.width || 1280, area.width),
+    height: Math.min(st.height || 860, area.height),
     x: st.x,
     y: st.y,
     minWidth: 420,
