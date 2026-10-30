@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f3f0e9;
   --surface: #faf8f3;
   --ink: #1e1d1a;
@@ -446,3 +446,186 @@ dialog::backdrop { background: rgba(20, 19, 17, 0.3); }
   .city-dials { padding: 24px 16px; gap: 32px 16px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
   .status { padding: 10px 16px 14px; }
 }
+
+/* A quiet travel desk: warm paper, evergreen controls, generous typography. */
+:root {
+  --bg: #f4f5f0; --surface: #ffffff; --ink: #202e2b; --ink-2: #52625c;
+  --muted: #75817a; --line: #dfe5dd; --accent: #26735c;
+  --day: #e5cc8c; --night: #566b70; --track: #e8ece5;
+  --hover: rgba(38,115,92,.06);
+}
+:root[data-theme='dark'] {
+  --bg: #121b19; --surface: #1b2723; --ink: #edf2e9; --ink-2: #b3c3b9;
+  --muted: #91a399; --line: #31433a; --accent: #8ccbb0;
+  --day: #b99f63; --night: #42575e; --track: #2a3832;
+  --hover: rgba(140,203,176,.08);
+}
+body { min-width: 320px; }
+main { width: 100%; max-width: 1512px; margin: 0 auto; padding: 28px 40px 0; }
+.topbar { padding: 18px 40px; gap: 20px; background: var(--surface); }
+.wordmark { align-items: center; gap: 12px; }
+.brand-symbol { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--surface); font-size: 26px; line-height: 1; }
+.wordmark-name { font-size: 16px; letter-spacing: -.025em; }
+.wordmark-utc { margin-left: 12px; padding-left: 22px; border-left: 1px solid var(--line); }
+.topbar-actions { gap: 16px; }
+.text-btn { border-radius: 8px; border: 0; padding: 8px 12px; font-size: 13px; transition: background .18s, color .18s; }
+.text-btn:hover { background: var(--hover); }
+.icon-btn { width: 36px; height: 36px; border-radius: 9px; }
+.topbar-actions .icon-btn { margin-left: 0; }
+.view-switch { gap: 2px; padding: 4px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); }
+.view-switch .text-btn { padding: 6px 15px; color: var(--muted); }
+.view-switch .text-btn + .text-btn::before { content: none; }
+.view-switch .text-btn.active { background: var(--surface); color: var(--accent); box-shadow: 0 1px 4px #0000000b; }
+#btn-add { background: var(--accent); color: var(--surface); padding: 10px 17px; }
+#btn-add::before { content: '+'; margin-right: 8px; font-size: 16px; }
+#btn-add:hover { filter: brightness(.93); }
+.hero { padding: 28px 32px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; grid-template-columns: minmax(0,1.5fr) minmax(200px,1fr) auto; gap: 22px 32px; box-shadow: 0 6px 24px #132b2003; }
+.eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; color: var(--accent); margin-bottom: 18px; }
+.hero-city { font-size: 22px; letter-spacing: -.02em; text-transform: none; }
+.hero-zone { font-size: 10px; }
+.hero-time { font-size: clamp(58px,7.4vw,106px); margin: 12px 0 10px; letter-spacing: -.055em; }
+.hero-time .sec { font-size: .3em; color: var(--muted); margin-left: .2em; }
+.hero-date { font-size: 14px; color: var(--muted); }
+.hero-side { padding-left: 28px; border-left: 1px solid var(--line); }
+.hero-wx .wx-main { flex-wrap: wrap; gap: 10px; }
+.hero-wx .wx-temp { font-size: 38px; font-weight: 300; letter-spacing: -.05em; }
+.hero-wx .wx-desc { font-size: 14px; }
+.wx-facts { gap: 12px 18px; font-size: 12px; line-height: 1.7; }
+.wx-facts em, .sun-times em { font-size: 10px; letter-spacing: .02em; text-transform: none; }
+.sun-times { gap: 8px 16px; font-size: 11px; margin-top: 18px; }
+.hero-dial { width: clamp(110px,13vw,165px); padding: 10px; background: var(--bg); border-radius: 50%; }
+.hero-day { padding-top: 6px; }
+.band, .band.big { border-radius: 6px; height: 6px; }
+.band.big { height: 8px; }
+.band-now { width: 3px; border-radius: 3px; box-shadow: 0 0 0 2px var(--surface); }
+.scale { font-size: 10px; margin-top: 10px; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 26px 2px 16px; }
+.section-heading h1 { font-weight: 500; font-size: 19px; letter-spacing: -.03em; margin: 0; }
+.section-heading > span { font-size: 12px; color: var(--muted); }
+.city-list { padding: 0; }
+.row { grid-template-columns: minmax(120px,1.2fr) minmax(125px,1fr) minmax(90px,1.2fr) minmax(140px,1.3fr) 75px 32px; gap: 22px; padding: 17px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 13px; margin-bottom: 9px; transition: border-color .18s, background .18s; }
+.row:hover { border-color: var(--accent); }
+.city { font-size: 17px; font-weight: 500; }
+.sub { font-size: 10px; }
+.c-time { font-size: 30px; letter-spacing: -.04em; }
+.c-wx .wx-temp { font-size: 18px; }
+.c-wx .wx-desc { font-size: 12px; }
+.wx-range { font-size: 10px; margin-top: 5px; }
+.diff { font-size: 12px; color: var(--accent); }
+.add-city { width: 100%; border: 1px dashed var(--line); border-radius: 12px; padding: 13px; margin-top: 12px; text-align: center; font-size: 12px; }
+.add-city:hover { border-color: var(--accent); background: var(--hover); }
+.city-dials { padding: 0; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap: 14px; }
+.dial-item { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: 22px 16px 18px; }
+.dial-slot { width: min(120px,80%); margin-bottom: 16px; }
+.dial-item .city { letter-spacing: .06em; font-size: 12px; }
+.dial-item .city-menu { top: 8px; right: 8px; opacity: .5; }
+.city-dials .add-city { width: 100%; height: 100%; min-height: 180px; aspect-ratio: auto; border-radius: 16px; margin: 0; }
+.dial .face { stroke: var(--line); stroke-width: 1; }
+.dial .hour-tick { stroke-width: 2.5; }
+.status { padding: 18px 42px; max-width: 1512px; width: 100%; margin: 0 auto; gap: 10px; font-size: 10px; }
+.status .text-btn { font-family: var(--sans); font-size: 11px; }
+dialog { padding: 26px; border-radius: 18px; box-shadow: 0 24px 90px #071d1930; }
+dialog::backdrop { background: #0d211c66; backdrop-filter: blur(5px); }
+.modal { border-radius: 18px; }
+.modal-head { margin-bottom: 22px; }
+.modal-head h2 { font-size: 17px; letter-spacing: -.02em; text-transform: none; }
+.panel { width: min(400px,92vw); border-radius: 20px 0 0 20px; padding: 28px; }
+#search-input { border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: var(--bg); font-size: 17px; }
+#search-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.results button { padding: 14px 10px; border-radius: 8px; }
+.setting { padding: 20px 0; }
+.setting label { color: var(--ink-2); letter-spacing: .04em; }
+.seg { gap: 6px; }
+.seg button { background: var(--bg); border: 1px solid transparent; border-radius: 8px; padding: 7px 12px; font-size: 13px; }
+.seg button.active { border-color: var(--accent); color: var(--accent); background: var(--hover); }
+.home-row { align-items: center; font-size: 15px; }
+.home-row small { display: block; margin: 5px 0 0; overflow-wrap: anywhere; }
+.popup { padding: 6px; border-radius: 12px; box-shadow: 0 12px 40px #071d1920; }
+.popup button { border-radius: 6px; font-size: 13px; padding: 10px 12px; }
+@media (min-width: 1100px) and (max-height: 900px) {
+  main { padding-top: 18px; }
+  .hero { padding: 20px 28px 16px; gap: 14px 28px; }
+  .eyebrow { margin-bottom: 10px; }
+  .hero-time { font-size: 78px; }
+  .row { padding-top: 12px; padding-bottom: 12px; }
+  .section-heading { margin-top: 20px; margin-bottom: 12px; }
+}
+@media (max-width: 1100px) {
+  .topbar { padding: 16px 24px; }
+  .wordmark-utc { display: none; }
+  main { padding: 24px 24px 0; }
+  .hero { grid-template-columns: minmax(0,1fr) auto; grid-template-areas: 'text dial' 'side side' 'day day'; }
+  .hero-side { padding: 16px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .sun-times { margin-top: 10px; }
+  .row { grid-template-columns: minmax(110px,1fr) minmax(110px,1fr) minmax(140px,1fr) 65px 32px; grid-template-areas: 'name time wx off menu' 'band band band band band'; gap: 12px 16px; }
+  .status { padding: 16px 24px; }
+}
+@media (max-width: 680px) {
+  .topbar { padding: 14px 16px; flex-wrap: wrap; gap: 16px; }
+  .wordmark { width: 100%; }
+  .topbar-actions { width: 100%; gap: 6px; justify-content: space-between; flex-wrap: wrap; }
+  .view-switch .text-btn { padding: 6px 10px; }
+  #btn-add { padding: 9px 12px; }
+  main { padding: 18px 14px 0; }
+  .hero { padding: 22px 20px 18px; border-radius: 18px; grid-template-columns: minmax(0,1fr); grid-template-areas: 'text' 'side' 'day'; gap: 20px; }
+  .hero-dial { display: none; }
+  .hero-place { gap: 6px 10px; }
+  .hero-zone { overflow-wrap: anywhere; }
+  .hero-time { font-size: clamp(48px,12vw,80px); }
+  .section-heading { margin-top: 24px; }
+  .section-heading > span { display: none; }
+  .row { padding: 16px; grid-template-columns: minmax(0,1fr) auto 28px; grid-template-areas: 'name time menu' 'wx off off' 'band band band'; gap: 12px; }
+  .city { font-size: 16px; }
+  .c-time { font-size: 28px; }
+  .city-dials { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .dial-item { padding: 22px 10px 18px; }
+  .status { padding: 12px 16px; flex-wrap: wrap; gap: 4px; }
+  #status-text { flex: 1 1 100%; line-height: 1.7; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+/* Default desktop content must fit the available screen, including the footer. */
+@media (min-width: 1101px) and (max-height: 900px) {
+  .topbar { padding: 10px 32px; }
+  main { padding: 14px 32px 0; }
+  .hero { padding: 16px 24px 12px; gap: 12px 26px; }
+  .eyebrow { margin-bottom: 7px; }
+  .hero-city { font-size: 20px; }
+  .hero-time { font-size: clamp(54px,10vh,72px); margin: 8px 0; }
+  .hero-date { font-size: 13px; }
+  .hero-dial { width: clamp(100px,17vh,125px); padding: 8px; }
+  .hero-wx .wx-temp { font-size: 30px; }
+  .wx-facts { gap: 6px 14px; margin-top: 6px; line-height: 1.5; }
+  .sun-times { gap: 6px 12px; margin-top: 10px; }
+  .hero-day { padding-top: 2px; }
+  .scale { margin-top: 6px; }
+  .section-heading { margin: 16px 2px 10px; }
+  .section-heading h1 { font-size: 17px; }
+  .row { padding: 8px 20px; margin-bottom: 6px; gap: 20px; }
+  .c-time { font-size: 28px; }
+  .city { font-size: 16px; }
+  .sub { margin-top: 2px; }
+  .add-city { padding: 9px; margin-top: 8px; }
+  .status { padding: 8px 34px; }
+  .dial-item { padding: 16px 12px; }
+  .dial-slot { width: clamp(84px,16vh,110px); margin-bottom: 12px; }
+  .dial-item .c-wx { margin-top: 8px; }
+  .city-dials .add-city { min-height: 180px; }
+}
+@media (min-width: 1101px) and (max-height: 740px) {
+  .topbar { padding-top: 7px; padding-bottom: 7px; }
+  main { padding-top: 10px; }
+  .hero { padding: 12px 22px 10px; gap: 8px 22px; grid-template-columns: minmax(0,1.3fr) minmax(0,1.3fr) auto; }
+  .hero-side { padding-left: 18px; }
+  .hero-time { font-size: 54px; margin: 6px 0; }
+  .hero-dial { width: 100px; }
+  .hero-wx .wx-temp { font-size: 26px; }
+  .wx-facts { gap: 4px 10px; font-size: 11px; }
+  .sun-times { margin-top: 7px; gap: 4px 10px; font-size: 10px; }
+  .section-heading { margin-top: 10px; margin-bottom: 8px; }
+  .row { padding-top: 5px; padding-bottom: 5px; margin-bottom: 5px; }
+  .add-city { margin-top: 6px; padding: 7px; }
+  .status { padding-top: 5px; padding-bottom: 5px; }
+}
+
+

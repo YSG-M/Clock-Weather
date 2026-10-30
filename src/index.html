@@ -15,6 +15,7 @@
 <body>
   <header class="topbar">
     <div class="wordmark">
+      <span class="brand-symbol" aria-hidden="true">◷</span>
       <span class="wordmark-name">Clock Weather</span>
       <span class="wordmark-utc" id="utc-now"></span>
     </div>
@@ -33,6 +34,7 @@
   <main>
     <section class="hero">
       <div class="hero-text">
+        <div class="eyebrow" data-i18n="localTime"></div>
         <div class="hero-place">
           <span class="hero-city" id="hero-city"></span>
           <span class="hero-zone" id="hero-zone"></span>
@@ -51,7 +53,8 @@
       </div>
     </section>
 
-    <section id="cities"></section>
+    <div class="section-heading"><h1 data-i18n="worldClocks"></h1><span data-i18n="worldSubtitle"></span></div>
+    <section id="cities" aria-label="World clocks"></section>
   </main>
 
   <footer class="status">

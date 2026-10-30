@@ -16,6 +16,7 @@ const esc = (s) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
 
 const I18N = {
   en: {
+    localTime: 'YOUR LOCAL MOMENT', worldClocks: 'Around the world', worldSubtitle: 'Different places. The same moment.', close: 'Close', cityActions: 'City actions',
     locale: 'en-US',
     settings: 'Settings', theme: 'Light / dark', about: 'About', fullscreen: 'Full screen', refresh: 'Refresh',
     viewList: 'List', viewDials: 'Dials',
@@ -41,6 +42,7 @@ const I18N = {
     },
   },
   zh: {
+    localTime: '此刻 · 所在城市', worldClocks: '世界此刻', worldSubtitle: '不同城市，同一个此刻。', close: '关闭', cityActions: '城市操作',
     locale: 'zh-CN',
     settings: '设置', theme: '浅色 / 深色', about: '关于', fullscreen: '全屏', refresh: '刷新',
     viewList: '列表', viewDials: '表盘',
@@ -451,8 +453,8 @@ function renderChrome() {
     el.title = t(el.dataset.i18nTitle);
     el.setAttribute('aria-label', el.title);
   }
-  for (const b of document.querySelectorAll('[data-close]')) b.innerHTML = ICONS.close;
-  for (const b of document.querySelectorAll('[data-view]')) b.classList.toggle('active', b.dataset.view === S.view);
+  for (const b of document.querySelectorAll('[data-close]')) { b.innerHTML = ICONS.close; b.setAttribute('aria-label', t('close')); }
+  for (const b of document.querySelectorAll('[data-view]')) { b.classList.toggle('active', b.dataset.view === S.view); b.setAttribute('aria-pressed', String(b.dataset.view === S.view)); }
   updateFullscreenIcon();
   applyTheme();
 }
@@ -460,6 +462,7 @@ function renderChrome() {
 function cityMenuButton(i) {
   const b = document.createElement('button');
   b.className = 'icon-btn city-menu';
+  b.setAttribute('aria-label', `${S.cities[i].name} · ${t('cityActions')}`);
   b.innerHTML = ICONS.dots;
   b.addEventListener('click', (e) => openCityMenu(e.currentTarget, i));
   return b;
